@@ -1,0 +1,784 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  /* Makes width/height calculations easier */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Basic link styling */
+a {
+    color: black;
+    text-decoration: none;
+    transition: all 0.3s ease;  /* Smooth animations for all changes */
+}
+
+/* Brand color - this blue appears throughout the site */
+span {
+    color: #417AFF;
+}
+
+/* ===== NAVIGATION BAR STYLING ===== */
+nav {
+    display: flex;                    /* Creates horizontal layout */
+    justify-content: space-between;  /* Spreads items to edges */
+    position: sticky;                /* Makes nav stick to top */
+    top: 0;                         /* Sticks to very top */
+    padding: 1.2em 1.5em;
+    background-color: white;
+    font-weight: bold;
+    z-index: 1000;                  /* Ensures nav stays above other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+}
+
+/* Logo section styling */
+#logo {
+    display: flex;
+    align-items: center;  /* Vertically centers icon and text */
+    gap: 0.5em;          /* Space between icon and text */
+}
+
+.icons {
+    width: 25px;
+    height: 25px;
+}
+
+/* Navigation links container */
+.nav-links {
+    display: flex;
+    gap: 2rem;          /* Space between navigation items */
+    align-items: center;
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+    color: #417AFF;                 /* Changes color on hover */
+}
+
+/* Resume button styling */
+#resume-btn {
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.5em 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    border: none;
+    cursor: pointer;                /* Shows hand cursor on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);  /* Creates depth */
+    font-weight: bold;
+    transition: all 0.3s ease;     /* Smooth animation for all changes */
+}
+
+#resume-btn i {
+    font-size: 16px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Resume button container */
+#resume-box {
+    transition: all 0.3s ease;
+}
+
+/* Hover effects - Students should TYPE these to understand interactivity */
+#resume-box:hover {
+    transform: scale(1.05);  
+}
+
+#resume-btn:hover {
+    background-color: #417AFF; 
+    color: white;               
+    transform: scale(1.05);     
+}
+
+#resume-btn:hover i {
+    color: white;  /* Changes icon color on hover */
+}
+
+/* ===== MOBILE HAMBURGER MENU ===== */
+/* Hidden by default on desktop - shows on mobile */
+.hamburger {
+    display: none;           /* Hidden on desktop */
+    flex-direction: column;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 3px 0;
+    transition: 0.3s;      /* Animation for hamburger transformation */
+}
+
+/* ===== HERO SECTION - MAIN LANDING AREA ===== */
+#hero {
+    background-color: #fffcf5;  /* Light cream background */
+    width: 100%;                /* Full viewport width */
+    padding: 20px 0;           /* Vertical padding only */
+}
+
+/* Container pattern - important web design concept */
+#hero .container {
+    display: flex;                    /* Side-by-side layout */
+    justify-content: space-between;  /* Spreads content apart */
+    align-items: center;             /* Vertically centers content */
+    max-width: 1200px;               /* Limits content width */
+    margin: 0 auto;                  /* Centers the container */
+    padding: 0 80px;                /* Horizontal padding for content */
+}
+
+/* Left side - text content */
+#hero-body {
+    flex: 1;  /* Takes up remaining space in flex container */
+}
+
+/* Main headline styling */
+#hero-header {
+    font-size: x-large;
+}
+
+#hero-header h1 {
+    font-size: 3rem;        /* Large, eye-catching text */
+    margin-bottom: 20px;
+}
+
+/* Text outline effect - advanced CSS technique */
+.outlined {
+    -webkit-text-stroke: 2px black;           /* Creates outline around text */
+    -webkit-text-fill-color: transparent;    /* Makes interior transparent */
+    color: black;                             /* Fallback for unsupported browsers */
+}
+
+/* Description text styling */
+#hero-content {
+    font-weight: 100;    /* Light font weight for readability */
+    max-width: 80%;      /* Prevents text from being too wide */
+    margin-bottom: 30px;
+    line-height: 1.6;    /* Improves readability */
+}
+
+/* Profile image styling */
+#human {
+    width: 316px;
+    height: 475px;
+    transform: scaleX(-1);  /* Horizontally flips the image */
+}
+
+/* ===== SOCIAL MEDIA ICONS ===== */
+.social-icons {
+    display: flex;      /* Horizontal layout */
+    gap: 15px;         /* Space between icons */
+    margin-top: 30px;
+}
+
+/* Individual social media icon styling */
+.social-icon {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 2px solid #417AFF;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;     /* Smooth transitions for hover effects */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon i {
+    font-size: 20px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Interactive hover effects - Students should TYPE these */
+.social-icon:hover {
+    background-color: #417AFF;                    /* Changes background */
+    transform: translateY(-2px);                 /* Lifts icon slightly */
+    box-shadow: 0 6px 15px rgba(65, 122, 255, 0.3);  /* Enhanced shadow with brand color */
+}
+
+.social-icon:hover i {
+    color: white;  /* Changes icon color on hover */
+}
+
+/* ===== SKILLS SECTION LAYOUT ===== */
+#skills-section {
+    text-align: center;       /* Centers all text in this section */
+    padding: 50px 20px;       /* Vertical and horizontal spacing */
+    max-width: 1200px;        /* Consistent with other sections */
+    margin: 0 auto;           /* Centers the section */
+}
+
+/* Section header styling */
+.skills-header {
+    font-weight: 900;         /* Very bold text */
+    font-size: 3rem;          /* Large heading */
+    margin-bottom: 20px;
+}
+
+/* Description text */
+.skills-desc {
+    margin: 30px auto 50px auto;
+    color: #666;              /* Gray text for description */
+    max-width: 600px;         /* Prevents text from being too wide */
+    font-size: 1.1rem;
+    line-height: 1.6;         /* Improves readability */
+}
+
+/* Skills container */
+.skills-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;              /* Arranges skill cards */
+    flex-direction: column;     /* Stacks cards vertically */
+    gap: 20px;                  /* Space between cards */
+}
+
+/* ===== INDIVIDUAL SKILL CARDS ===== */
+.skill-item {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;                /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);  /* Card shadow */
+    position: relative;                 /* Allows absolute positioning inside */
+    border: 2px solid #417AFF;         /* Brand color border */
+    transition: all 0.3s ease;         /* Smooth animations */
+    cursor: pointer;                    /* Shows hand cursor on hover */
+}
+
+/* HOVER EFFECTS */
+.skill-item:hover {
+    transform: translateY(-5px);                        /* Lifts card up */
+    box-shadow: 0 10px 25px rgba(65, 122, 255, 0.2);  /* Enhanced shadow */
+}
+
+/* Skill name and icon container */
+.skill-info {
+    display: flex;
+    align-items: center;      /* Vertically aligns icon and text */
+    gap: 15px;                /* Space between icon and text */
+    margin-bottom: 15px;
+}
+
+.skill-info i {
+    font-size: 2rem;          /* Large icon size */
+    color: #417AFF;           /* Brand color for icons */
+}
+
+.skill-name {
+    font-weight: 600;         /* Semi-bold text */
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Skill percentage display */
+.skill-percentage {
+    position: absolute;       /* Positioned relative to .skill-item */
+    top: 20px;               /* Distance from top */
+    right: 20px;             /* Distance from right */
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+/* ===== PROGRESS BAR STYLING ===== */
+/* Progress bar container */
+.skill-bar {
+    width: 100%;              /* Full width of parent */
+    height: 8px;              /* Thin bar height */
+    background-color: #e9ecef; /* Light gray background */
+    border-radius: 10px;      /* Rounded ends */
+    overflow: hidden;         /* Hides overflow from progress bar */
+    margin-top: 10px;
+}
+
+/* Animated progress bar */
+.skill-progress {
+    height: 100%;             /* Fills parent height */
+    background: linear-gradient(90deg, #417AFF 0%, #6e5ce7 100%);  /* Gradient background */
+    border-radius: 10px;      /* Rounded ends */
+    transition: width 2s ease-in-out;  /* Smooth width animation */
+    width: 0%;                /* Starts at 0, animates to target */
+}
+
+/* Different skill levels - these will animate when page loads */
+.skill-progress[data-width="95"] {
+    width: 95%;               /* HTML skill level */
+}
+
+.skill-progress[data-width="80"] {
+    width: 80%;               /* CSS skill level */
+}
+
+.skill-progress[data-width="70"] {
+    width: 70%;               /* JavaScript skill level */
+}
+
+/* ===== PROJECTS SECTION ===== */
+#projects-section {
+    background-color: #fffcf5;  /* Same background as hero section */
+    width: 100%;
+    padding: 20px 0;
+}
+
+#projects-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.projects-header {
+    font-weight: 900;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Individual project layout */
+.project-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+    gap: 60px;
+}
+
+/* Alternating layout - key responsive design technique */
+.project-item.reverse {
+    flex-direction: row-reverse;  /* Reverses order for alternating layout */
+}
+
+/* Project image styling */
+.project-image img {
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    max-width: 500px;
+    width: 100%;
+    height: auto;  /* Maintains aspect ratio */
+}
+
+/* Project description area */
+.project-desc {
+    text-align: left;
+    flex: 1;
+}
+
+.project-desc h1 {
+    font-size: 4rem;
+    font-weight: 300;  /* Thin font weight for large numbers */
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-desc h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.project-desc p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* External link icon button */
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover {
+    transform: scale(1.1);
+}
+
+.project-link i {
+    color: #666;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.project-link:hover i {
+    color: #417AFF;
+}
+
+/* ===== CONTACT SECTION ===== */
+#contacts-section {
+    padding: 50px 0;
+    background-color: white;
+}
+
+#contacts-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 80px;
+}
+
+.contacts-header {
+    font-weight: 900;
+    font-size: 3rem;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+/* ===== CONTACT FORM STYLING ===== */
+.contact-form {
+    flex: 1;
+    max-width: 400px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+/* Form focus effects */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #417AFF;
+    background-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(65, 122, 255, 0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Form bottom row - button and social icons */
+.form-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.form-bottom .social-icons {
+    margin-top: 0;
+}
+
+/* Submit button */
+.contact-btn {
+    background-color: #417AFF;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #2d5ae6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(65, 122, 255, 0.3);
+}
+
+/* ===== CONTACT INFO SECTION ===== */
+.contact-info {
+    flex: 1;
+    max-width: 500px;
+    padding-left: 40px;
+}
+
+.contact-info h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.contact-info p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.contact-details {
+    margin-top: 30px;
+}
+
+.contact-details .email,
+.contact-details .phone {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-details .email i,
+.contact-details .phone i {
+    color: #417AFF;
+    font-size: 1rem;
+}
+
+/* ===== FOOTER SECTION ===== */
+footer {
+    background-color: #fffcf5;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    padding-bottom: 10px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-brand h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.footer-copyright {
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Tablet and Mobile */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        gap: 1rem;
+    }
+   
+    .nav-links.active {
+        display: flex;
+    }
+   
+    .hamburger {
+        display: flex;
+    }
+   
+    nav {
+        padding: 1rem 1.5rem;
+    }
+   
+    /* Hero Section */
+    #hero .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 0 20px;
+        gap: 30px;
+    }
+   
+    #hero-header h1 {
+        font-size: 2.5rem;
+    }
+   
+    #hero-content {
+        max-width: 100%;
+    }
+   
+    #human {
+        display: none;
+    }
+   
+    .social-icons {
+        justify-content: center;
+    }
+   
+    /* Skills Section */
+    #skills-section {
+        padding: 30px 20px;
+    }
+   
+    .skills-header {
+        font-size: 2.5rem;
+    }
+   
+    /* Projects Section */
+    #projects-section .container {
+        padding: 0 20px;
+    }
+   
+    .projects-header {
+        font-size: 2.5rem;
+    }
+   
+    .project-item,
+    .project-item.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+   
+    .project-desc h1 {
+        font-size: 3rem;
+    }
+   
+    .project-desc h2 {
+        font-size: 1.5rem;
+    }
+   
+    /* Contact Section */
+    #contacts-section .container {
+        padding: 0 20px;
+    }
+   
+    .contacts-header {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+   
+    .contact-content {
+        flex-direction: column;
+        gap: 40px;
+    }
+   
+    .contact-form {
+        max-width: 100%;
+        width: 100%;
+    }
+   
+    .contact-info {
+        padding-left: 0;
+        text-align: center;
+    }
+   
+    .contact-details .email,
+    .contact-details .phone {
+        justify-content: center;
+    }
+   
+    .contact-info h2 {
+        font-size: 2rem;
+    }
+   
+    .form-bottom {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+}
+
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+    nav {
+        padding: 0.8rem 1rem;
+    }
+   
+    #hero-header h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+   
+    #human {
+        width: 200px;
+        height: 300px;
+    }
+   
+    .skills-header,
+    .projects-header,
+    .contacts-header {
+        font-size: 2rem;
+    }
+   
+    .project-desc h1 {
+        font-size: 2.5rem;
+    }
+   
+    .project-desc h2 {
+        font-size: 1.3rem;
+        line-height: 1.3;
+    }
+   
+    .contact-info h2 {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+   
+    .social-icons {
+        justify-content: center;
+    }
+   
+    /* Better touch targets for mobile */
+    .nav-links a {
+        padding: 10px;
+        display: block;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+   
+    .contact-btn,
+    #resume-btn {
+        min-height: 44px;
+        padding: 12px 20px;
+    }
+   
+    .social-icon {
+        min-width: 44px;
+        min-height: 44px;
+    }
+   
+    /* Improve mobile form layout */
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
